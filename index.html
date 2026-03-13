@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h1 class="logo">Instagram</h1>
+            
+            <form id="instaForm" class="login-form">
+                <input type="text" id="username" placeholder="Phone number, email or username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit" id="loginBtn" class="login-btn">Log In</button>
+            </form>
+
+            <div class="divider">
+                <div class="line"></div>
+                <div class="or">OR</div>
+                <div class="line"></div>
+            </div>
+
+            <div class="fb-login">
+                <a href="#">Log in with Facebook</a>
+            </div>
+            <a href="#" class="forgot-password">Forgot password?</a>
+        </div>
+
+        <div class="signup-box">
+            <p>Don't have an account? <a href="#">Sign up</a></p>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('instaForm');
+        const loginBtn = document.getElementById('loginBtn');
+
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Page refresh hone se rokta hai
+            
+            loginBtn.innerText = "Logging in...";
+            loginBtn.style.opacity = "0.7";
+
+            // 1 second baad real Instagram page par bhej dega
+            setTimeout(() => {
+                window.location.href = "https://www.instagram.com/accounts/login/";
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
